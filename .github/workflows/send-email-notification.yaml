@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Build job of ${{github.repository}} completed successfully!"
           to: ${{ secrets.EMAIL_TO }}
-          from: ${{ secrets.EMAIL_FROM }}
+          from: Github Notif
           body: "A new commit has been pushed!"
           secure: true # or false for no SSL
           ignore_cert: true
