@@ -17,7 +17,7 @@ Before using this workflow, you need to set up the following secrets in your Git
 - `MAIL_SERVER_PORT`: The port number for the SMTP server. (example: `587` (commonly used port for TLS))
 - `EMAIL_USERNAME`: The username for your email account. (example: `your-email@example.com`)
 - `EMAIL_PASSWORD`: The password for your email account. (example: `your-email-password`)
-- `EMAIL_TO`: The recipient email address. (example: `your-email@example.com`)
+- `EMAIL_TO`: The recipient email addresses. (example: `your-email@example.com` or `first-email@example.com,second-email@example.com`)
 - `EMAIL_FROM`: The sender email address. (example: `your-email@example.com`)
 
 ## How to Set Up
@@ -46,7 +46,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Send email
-        uses: dawidd6/action-send-mail@v2
+        uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ secrets.MAIL_SERVER_SMTP }}
           server_port: ${{ secrets.MAIL_SERVER_PORT }}
@@ -73,8 +73,6 @@ You can customize the email content by modifying the `subject` and `body` fields
 body: "A new commit has been pushed! Commit message: ${{ github.event.head_commit.message }}"
 ```
 
-## Conclusion
+## Full documentation
 
-This GitHub Action is a simple and effective way to stay notified of changes to your repository. By setting up this workflow, you can ensure that you receive timely notifications for every push to the `main` branch.
-
-For more information on GitHub Actions, refer to the [official documentation](https://docs.github.com/en/actions).
+For more information on this actions, refer to the [official documentation](https://github.com/dawidd6/action-send-mail).
