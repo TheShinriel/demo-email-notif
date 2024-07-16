@@ -1,0 +1,29 @@
+name: Send Email Notification
+
+on:
+  push:
+    branches:
+      - main # or 'master'
+  workflow_dispatch:
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: ${{ secrets.MAIL_SERVER_SMTP }}
+          server_port: ${{ secrets.MAIL_SERVER_PORT }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "New Commit on Main"
+          to: ${{ secrets.EMAIL_TO }}
+          from: ${{ secrets.EMAIL_FROM }}
+          body: "A new commit has been pushed!"
+          secure: true # or false for no SSL
+
