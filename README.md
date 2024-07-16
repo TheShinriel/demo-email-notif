@@ -18,7 +18,7 @@ Before using this workflow, you need to set up the following secrets in your Git
 - `EMAIL_USERNAME`: The username for your email account. (example: `your-email@example.com`)
 - `EMAIL_PASSWORD`: The password for your email account. (example: `your-email-password`)
 - `EMAIL_TO`: The recipient email addresses. (example: `your-email@example.com` or `first-email@example.com,second-email@example.com`)
-- `EMAIL_FROM`: The sender email address. (example: `<your-email@example.com>`)
+- `EMAIL_FROM`: The sender email address. (example: `Your Name <your-email@example.com>`)
 
 ## How to Set Up
 

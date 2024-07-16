@@ -21,9 +21,11 @@ jobs:
           server_port: ${{ secrets.MAIL_SERVER_PORT }}
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "New Commit on Main"
+          subject: "Build job of ${{github.repository}} completed successfully!"
           to: ${{ secrets.EMAIL_TO }}
           from: ${{ secrets.EMAIL_FROM }}
           body: "A new commit has been pushed!"
           secure: true # or false for no SSL
-
+          ignore_cert: true
+          convert_markdown: true
+          priority: low
